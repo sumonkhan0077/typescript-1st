@@ -13,3 +13,9 @@ const {favouriteColor: myFavouriteColor , name:{firstName:myname}}= user;
 
 // const {favouriteColor, name:{firstName}}= user; // ay vabe hole simple
 console.log(myFavouriteColor, myname )
+
+
+// array destructuring 
+const friend = ["karim" ,"jabbar"]
+const [, mybestfriend] = friend
+console.log(mybestfriend)
