@@ -67,3 +67,13 @@ function getActiveUserNames(users: User[]): string[] {
 }
 
 console.log(getActiveUserNames(users));
+
+function getFirstElement<T>(arr: T[]): T | undefined {
+  return arr[0];
+}
+
+const numberResult = getFirstElement([10, 20, 30]);
+const stringResult = getFirstElement(["Hello", "TypeScript"]);
+
+console.log(numberResult);
+console.log(stringResult);
