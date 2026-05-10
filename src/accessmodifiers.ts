@@ -9,11 +9,11 @@ class BankAccount {
     this._userBalance = userBalance;
   }
 
-  public addBalance(balance: number) {
+   addBalance(balance: number) {
     this._userBalance = this._userBalance + balance;
   }
 
-  public getBalance() {
+   getBalance() {
     return this._userBalance;
   }
 }
