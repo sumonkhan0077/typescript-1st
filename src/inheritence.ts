@@ -56,4 +56,3 @@ const teacher1 = new Teacher(
   "Senior teacher"
 );
 
-teacher1.
