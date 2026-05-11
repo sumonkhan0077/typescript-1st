@@ -67,3 +67,40 @@ student1.addMarks(70);
 console.log(student1.getTotalMarks());
 console.log(student1.getAverage());
  
+
+class BankAccount {
+  accountName: string;
+  private balance: number;
+
+  constructor(accountName: string, balance: number) {
+    this.accountName = accountName;
+    this.balance = balance;
+  }
+
+  deposit(amount: number): void {
+    this.balance += amount;
+    console.log(`${amount} deposited`);
+  }
+
+  withdraw(amount: number): void {
+    if (amount > this.balance) {
+      console.log("Insufficient Balance");
+      return;
+    }
+
+    this.balance -= amount;
+    console.log(`${amount} withdrawn`);
+  }
+
+  getBalance(): number {
+    return this.balance;
+  }
+}
+
+const account = new BankAccount("Sumon", 1000);
+
+account.deposit(500);
+
+account.withdraw(300);
+
+console.log(account.getBalance());
