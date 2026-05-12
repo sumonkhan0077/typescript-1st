@@ -104,3 +104,47 @@ account.deposit(500);
 account.withdraw(300);
 
 console.log(account.getBalance());
+
+
+type Product = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+class ShoppingCart {
+  products: Product[];
+
+  constructor() {
+    this.products = [];
+  }
+
+  addProduct(name: string, price: number, quantity: number): void {
+    const product: Product = {
+      name,
+      price,
+      quantity,
+    };
+
+    this.products.push(product);
+  }
+
+  getTotalPrice(): number {
+    return this.products.reduce((total, product) => {
+      return total + product.price * product.quantity;
+    }, 0);
+  }
+
+  showProducts(): void {
+    console.log(this.products);
+  }
+}
+
+const cart = new ShoppingCart();
+
+cart.addProduct("Mouse", 500, 2);
+cart.addProduct("Keyboard", 1000, 1);
+
+cart.showProducts();
+
+console.log(cart.getTotalPrice());
