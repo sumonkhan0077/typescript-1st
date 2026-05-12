@@ -148,3 +148,52 @@ cart.addProduct("Keyboard", 1000, 1);
 cart.showProducts();
 
 console.log(cart.getTotalPrice());
+
+
+type Employee = {
+  name: string;
+  salary: number;
+};
+
+class EmployeeManager {
+  employees: Employee[];
+
+  constructor() {
+    this.employees = [];
+  }
+
+  addEmployee(name: string, salary: number): void {
+    this.employees.push({
+      name,
+      salary,
+    });
+  }
+
+  getTotalSalary(): number {
+    return this.employees.reduce((total, employee) => {
+      return total + employee.salary;
+    }, 0);
+  }
+
+  getHighestSalary(): number {
+    return Math.max(
+      ...this.employees.map((employee) => employee.salary)
+    );
+  }
+
+  showEmployees(): void {
+    console.log(this.employees);
+  }
+}
+
+const manager = new EmployeeManager();
+
+manager.addEmployee("Sumon", 50000);
+manager.addEmployee("Rahim", 70000);
+manager.addEmployee("Karim", 60000);
+
+console.log(manager.getTotalSalary());
+
+console.log(manager.getHighestSalary());
+
+manager.showEmployees();
